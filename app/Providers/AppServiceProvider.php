@@ -40,7 +40,7 @@ class AppServiceProvider extends ServiceProvider
 
         view()->composer('layout.bsidebar', function($view)
         {
-            $jurusan= ppdbjurusan::all();
+            $jurusan= jurusan::all();
             $view->with('coba',$jurusan );
         } );
 

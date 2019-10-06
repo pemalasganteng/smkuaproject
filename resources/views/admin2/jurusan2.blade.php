@@ -3,36 +3,7 @@
     @section('css')
 
     @endsection
-	@section('navigasi')
-			<!-- page title area start -->
-            <div class="page-title-area">
-                <div class="row align-items-center">
-                    <div class="col-sm-6">
-                        <div class="breadcrumbs-area clearfix">
-                            <h4 class="page-title pull-left">Dashboard</h4>
-                            <ul class="breadcrumbs pull-left">
-                                <li><a href="/">Home</a></li>
-                                <li><span>Slide Bar</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 clearfix">
-
-                        <div class="user-profile pull-right">
-                            <button>tees</button>
-                            <img class="avatar user-thumb" src="assets/images/author/avatar.png" alt="avatar">
-                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown">Kumkum Rai <i class="fa fa-angle-down"></i></h4>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Message</a>
-                                <a class="dropdown-item" href="#">Settings</a>
-                                <a class="dropdown-item" href="#">Log Out</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- page title area end -->
-	@endsection
+	
 
     @section('isi')
 
@@ -57,7 +28,7 @@
     </div>
     @endif
 
-
+     
     	<div class="col-12 mt-5">
                                 <div class="card">
                                     <div class="card-body">
@@ -336,6 +307,83 @@
                                 </div>       
 
                                    
+<br><br>
+                                    <h4 class="header-title">Statistik</h4>
+
+                                    <button href="#myModal6" id="openBtn" data-toggle="modal" class="btn btn-default">Input statistik</button>
+
+<div class="modal fade" id="myModal6">
+<div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        </div>
+        <div class="modal-body">
+        <h5 class="text-center">Input Data</h5>
+           
+            <form action="{{ route ('up_jur_gallery',$jurusan[0]->id)}}" method="post" enctype="multipart/form-data">
+                                    {{ csrf_field() }}
+
+                                        <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">Upload</span>
+                                                </div>
+                                                <div class="custom-file">
+                                                    <input type="file" name="file" class="custom-file-input" id="inputGroupFile01">
+                                                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                                </div>
+                                        </div>
+                                        <input type="hidden" name="p" value="{{$jurusan[0]->id}}">
+                                       
+                                       
+                                        <button type="submit" class="btn btn-primary mt-4 pr-4 pl-4">Submit</button>
+
+                                    </form>
+        </div>
+
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default " data-dismiss="modal">Close</button>
+         
+        </div>
+                
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+
+                                        
+
+                                    <div class="single-table">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped text-center">
+                                            <thead class="text-uppercase">
+                                                <tr>
+                                                   
+                                                    <th scope="col">Gambar</th>
+                                                    <th scope="col">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            @foreach($gallery as $po)
+                                            <tr >  
+                                                 
+                                                  <td><img src="{{ url('gambar/jurusan/gallery/'.$po->file) }}" width="40px">{{$po->file}}</td>  
+                                                  <td>
+                                                    
+                                                    <a href="{{ route ('del_jur_gallery', $po->id)}}" class="btn btn-red">  <i class="fa fa-trash-o"> </i>   hapus</a>
+                                                 </td>
+                                            </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                
+
+
+
+
                                     <br><br>
                                     <h4 class="header-title">Gallery</h4>
 

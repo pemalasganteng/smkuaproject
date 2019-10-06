@@ -65,7 +65,7 @@ Route::get('/admin', 'AdminController@coba');
 Route::get('/admin/halaman-depan/statistik', 'AdminController@statistik')->name('statistik');
 Route::post('/admin/halaman-depan/statistik-up', 'AdminController@up_statistik')->name('up_statistik');
 
-Route::get('/admin/halaman-depan/video', 'AdminController@video');
+Route::get('/admin/halaman-depan/video', 'AdminController@video')->name('hal_video');
 Route::post('/admin/halaman-depan/video-up', 'AdminController@up_video')->name('up_video');
 
 Route::get('/admin/halaman-depan/slidebar', 'AdminController@slidebar')->name('input_slidebar');

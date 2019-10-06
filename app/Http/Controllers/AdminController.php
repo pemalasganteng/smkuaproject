@@ -410,7 +410,7 @@ class AdminController extends Controller
 
     public function katasambutan(){
 
-        $katadepan = katadepan::find(1);
+        $katadepan = katadepan::find(3);
 
         return view('admin2/katasambutan',['katadepan' => $katadepan]);
 

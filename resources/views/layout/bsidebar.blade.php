@@ -21,7 +21,7 @@
                                     </li>
                                     <li><a href="{{ route ('kata_depan')}}">Kata Depan</a></li>
                                     <li><a href="{{ route ('statistik')}}">Statistik</a></li>
-                                    <li><a href="/admin/halaman-depan/video">Video</a></li>
+                                    <li><a href="{{ route ('hal_video')}}">Video</a></li>
                                     <li><a href="{{ route ('kepala')}}">Kepala Sekolah</a></li>
                                     <li><a href="#" aria-expanded="true">Keunggulan</a>
                                         <ul class="collapse">
