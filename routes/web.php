@@ -92,6 +92,8 @@ Route::get('/admin/jurusan/{id}/cb', 'AdminController@jurusan_del_alasan')->name
 Route::post('/admin/jurusan/{id}/d', 'AdminController@jurusan_up_gallery')->name('up_jur_gallery');
 Route::get('/admin/jurusan/{id}/dd', 'AdminController@jurusan_del_gallery')->name('del_jur_gallery');
 
+
+
 Route::get('/admin/ketenagaan', 'AdminController@ketenagaan')->name('input_gtk');
 Route::get('/admin/ketenagaan-data', 'AdminController@data_ketenagaan')->name('data_gtk');
 Route::get('/admin/ketenagaan-data/{id}', 'AdminController@data_ketenagaan2')->name('data2_gtk');
